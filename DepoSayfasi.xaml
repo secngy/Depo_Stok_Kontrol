@@ -1,0 +1,236 @@
+﻿<Window x:Class="Depo_Stok_Kontrol.DepoSayfasi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Depo_Stok_Kontrol"
+        xmlns:userControls="clr-namespace:Depo_Stok_Kontrol.View.UserControls"
+        mc:Ignorable="d"
+        Title="DepoSayfasi" 
+        Height="450" Width="820"
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="450"
+        MinWidth="820"
+        Icon="/Images/warcat.jpg">
+    <Grid Background="#FFC3D7FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+      Margin="0,1,0,99" 
+      Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnGeri" 
+            Content="Geri" 
+            Height="30" 
+            FontSize="20"
+            Width="60" 
+            Margin="10,21"
+            Background="#FFE5A000" 
+            Click="btnGeri_Click"
+            Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtDepoKoduAra"
+                                   Height="30" 
+                                   Margin="10,21"
+                                   Placeholder="Depo Kodu"
+                                   MaxLength="10"
+                                   Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtDepoIsmiAra"
+                                   Height="30" 
+                                   Margin="10,21"
+                                   Placeholder="Depo İsmi"
+                                   MaxLength="20"
+                                   Grid.Column="2" />
+
+            <Button Name="btnAra" 
+            Content="Ara" 
+            Height="30" 
+            FontSize="20"
+            Width="60" 
+            Margin="10,21"
+            Background="#FFE5A000" 
+            Click="btnAra_Click"
+            Grid.Column="3" />
+
+            <Button Name="btnTemizle" 
+            Content="Temizle" 
+            Height="30" 
+            FontSize="15"
+            Width="60" 
+            Margin="10,21"
+            Background="#FFE5A000" 
+            Click="btnTemizle_Click"
+            Grid.Column="4" />
+
+            <Image Height="30" 
+           Width="30" 
+           Source="/Images/warcat.jpg" 
+           Margin="0,6,10,0"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           Grid.Column="5" />
+
+            <TextBlock HorizontalAlignment="Right" 
+               Height="55" 
+               Margin="0,16,8,0" 
+               TextWrapping="Wrap" 
+               Text="{Binding FullName}" 
+               VerticalAlignment="Top" 
+               Width="106" 
+               FontSize="12" 
+               FontWeight="Bold" 
+               Foreground="Gray"
+               Grid.Column="6" />
+        </Grid>
+        <Grid x:Name="grid1" 
+      Grid.Row="1" 
+      Margin="0,0,0,60" 
+      Height="Auto"
+      Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <userControls:ClearableTextBox x:Name="txtDepoKoduGuncelle" 
+                                   Height="30" 
+                                   Margin="10,5"
+                                   Placeholder="Depo Kodu*" 
+                                   MaxLength="10"
+                                   Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtDepoIsmiGuncelle" 
+                                   Height="30"
+                                   Margin="10,5"
+                                   Placeholder="Depo İsmi*"
+                                   MaxLength="20"
+                                   Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtKilitliGuncelle" 
+                                   Height="30"
+                                   Margin="10,5"
+                                   Placeholder="Kilitli (E/H)"
+                                   MaxLength="1"
+                                   Grid.Column="2" />
+
+            <userControls:ClearableTextBox x:Name="txtEksiBakiyeGuncelle" 
+                                   Height="30"
+                                   Margin="10,5"
+                                   Placeholder="Eksi Bakiye"
+                                   MaxLength="10"
+                                   Grid.Column="3" />
+        </Grid>
+        <Grid x:Name="grid2" 
+      Grid.Row="1" 
+      Margin="0,40,0,0" 
+      Height="Auto"
+      Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <userControls:ClearableTextBox x:Name="txtAciklamaBirGuncelle"              
+                                   Height="30" 
+                                   Margin="10,0"
+                                   Placeholder="Açıklama 1" 
+                                   MaxLength="50"
+                                   Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtAciklamaIkiGuncelle" 
+                                   Height="30"
+                                   Margin="10,0"
+                                   Placeholder="Açıklama 2"
+                                   MaxLength="50"
+                                   Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtAciklamaUcGuncelle" 
+                                   Height="30"
+                                   Margin="10,0"
+                                   Placeholder="Açıklama 3"
+                                   MaxLength="50"
+                                   Grid.Column="2" />
+
+            <Button Name="btnEkleGuncelle" 
+            Content="Depoya Ekle/Depoyu Güncelle" 
+            Height="30" 
+            Width="130" 
+            FontSize="9" 
+            Background="#FFE5A000" 
+            Margin="5,0,5,0" 
+            Click="btnEkleGuncelle_Click"
+            Grid.Column="3" />
+        </Grid>
+
+        <TextBlock x:Name="txtZorunlu"  
+                   Grid.Row="2"
+                   Height="20" 
+                   Text="*:Doldurulması zorunludur"
+                   Width="175"
+                   FontSize="15" 
+                   Foreground="DarkGray" 
+                   HorizontalAlignment="Left"
+                   Margin="10,0,0,0"
+                   Visibility="Hidden"/>
+
+
+        <DockPanel x:Name="dockPanel"
+                    Grid.Row="3"
+                    Visibility="Hidden"
+                    Height="Auto">
+            <DataGrid x:Name="dtgDepoBilgileri"
+                      CanUserAddRows="False"
+                      CanUserReorderColumns="False"
+                      CanUserResizeColumns="False"
+                      CanUserDeleteRows="False"
+                      SelectionMode="Extended"
+                      Margin="10,0,10,0" 
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False"
+                      DataGridCell.Selected="dtgDepoBilgileri_Selected"
+                      HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="DEPO__KODU" Binding="{Binding depo_kodu}" Width="Auto"/>
+                    <DataGridTextColumn Header="DEPO__ISMI" Binding="{Binding depo_ismi}" Width="Auto"/>
+                    <DataGridTextColumn Header="KILITLI" Binding="{Binding kilitli}" Width="Auto"/>
+                    <DataGridTextColumn Header="EKSI__BAKIYE" Binding="{Binding eksi_bakiye}" Width="Auto"/>
+                    <DataGridTextColumn Header="DACIK1" Binding="{Binding dacik1}" Width="Auto"/>
+                    <DataGridTextColumn Header="DACIK2" Binding="{Binding dacik2}" Width="Auto"/>
+                    <DataGridTextColumn Header="DACIK3" Binding="{Binding dacik3}" Width="Auto"/>
+                    <DataGridTextColumn Header="KAYIT__TARIHI" Binding="{Binding kayit_tarihi}" Width="Auto"/>
+                    <DataGridTextColumn Header="KAYIT__YAPAN" Binding="{Binding kayit_yapan}" Width="Auto"/>
+                    <DataGridTextColumn Header="DUZELTME__TARIHI" Binding="{Binding duzeltme_tarihi}" Width="Auto"/>
+                    <DataGridTextColumn Header="DUZELTME__YAPAN" Binding="{Binding duzeltme_yapan}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <TextBlock Text="©Created by Şevket Emin Cengay" 
+                   FontSize="10" 
+                   Foreground="DarkGray" 
+                   Width="150" 
+                   Height="15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   Margin="10,0,0,0"
+                   Grid.Row="4"/>
+    </Grid>
+</Window>

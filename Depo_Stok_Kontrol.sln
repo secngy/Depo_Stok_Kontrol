@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depo_Stok_Kontrol", "Depo_Stok_Kontrol.csproj", "{709B1038-81BD-4800-99BE-B2EBADECB185}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{709B1038-81BD-4800-99BE-B2EBADECB185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709B1038-81BD-4800-99BE-B2EBADECB185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709B1038-81BD-4800-99BE-B2EBADECB185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709B1038-81BD-4800-99BE-B2EBADECB185}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB0C3AB6-9DA4-4C2B-85B7-2EF855865809}
+	EndGlobalSection
+EndGlobal

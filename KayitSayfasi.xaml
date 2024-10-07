@@ -1,0 +1,82 @@
+﻿<Window Icon="/Images/warcat.jpg" x:Class="Depo_Stok_Kontrol.KayitSayfasi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Depo_Stok_Kontrol"
+        xmlns:userControls="clr-namespace:Depo_Stok_Kontrol.View.UserControls"
+        mc:Ignorable="d"
+        Title="KayitSayfasi" Height="500" Width="450"
+        WindowStartupLocation="CenterScreen"    
+        MinHeight="500"
+        MinWidth="450">
+    <Grid Background="#FFC3D7FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="340*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Button Name="btnGeri" 
+            Grid.Row="0"  
+            Content="Geri" 
+            Height="20" 
+            Width="40" 
+            Margin="30,30,0,0"
+            Click="btnGeri_Click" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Background="#FFE5A000"/>
+        <StackPanel Grid.Row="1" Margin="25,5">
+            <TextBlock Text="Kayıt Ol"
+                       FontSize="20"
+                       Margin="140,5" Width="70"/>
+            <userControls:ClearableTextBox x:Name="clearableTextBoxKullaniciAdi" 
+                                           Height="35" 
+                                           Placeholder="Kullanıcı Adı*"
+                                           Margin="0,5" 
+                                           Width="320"
+                                           MaxLength="20"/>
+            <userControls:ClearablePasswordBox x:Name="clearablePasswordBoxSifre" 
+                                               Height="35" 
+                                               Placeholder="Şifre*"
+                                               Margin="0,5"
+                                               Width="320"
+                                               MaxLength="25"/>
+            <userControls:ClearablePasswordBox x:Name="clearablePasswordBoxSifreTekrar" 
+                                               Height="35" 
+                                               Placeholder="Şifre Tekrar*"
+                                               Margin="0,5" 
+                                               Width="320"
+                                               MaxLength="25"/>
+            <userControls:ClearableTextBox x:Name="clearableTextBoxIlkIsim" 
+                                           Height="35" 
+                                           Placeholder="İlk İsim*"
+                                           Margin="0,5"
+                                           Width="320"
+                                           MaxLength="15"/>
+            <userControls:ClearableTextBox x:Name="clearableTextBoxOrtaIsim" 
+                                           Height="35" 
+                                           Placeholder="Orta İsim"
+                                           Margin="0,5"
+                                           Width="320"
+                                           MaxLength="15"/>
+            <userControls:ClearableTextBox x:Name="clearableTextBoxSoyisim" 
+                                           Height="35" 
+                                           Placeholder="Soyisim*"
+                                           Margin="0,5"
+                                           Width="320"
+                                           MaxLength="15"/>
+            <Button Name="btnKayitOl" 
+                    Content="Kayıt Ol"  
+                    Height="20" 
+                    Margin="230,0,0,0" 
+                    Width="90" 
+                    Background="#FFFFFBEB" Click="btnKayitOl_Click"/>
+        </StackPanel>
+        <TextBlock Text="©Created by Şevket Emin Cengay" 
+               FontSize="10" 
+               Height="15" 
+               Foreground="DarkGray" 
+               Margin="0,13,249,2" Grid.Row="2"/>
+    </Grid>
+</Window>

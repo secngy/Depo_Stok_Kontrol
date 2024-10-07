@@ -1,0 +1,282 @@
+﻿<Window x:Class="Depo_Stok_Kontrol.StokSayfasi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Depo_Stok_Kontrol"
+        xmlns:userControls="clr-namespace:Depo_Stok_Kontrol.View.UserControls"
+        mc:Ignorable="d"
+        Title="StokSayfasi" 
+        Height="450" Width="830"
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="450"
+        MinWidth="830"
+        Icon="/Images/warcat.jpg">
+    <Grid Background="#FFC3D7FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+              Margin="0,1,0,99" 
+              Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnGeri" 
+                    Content="Geri" 
+                    Height="30" 
+                    FontSize="20"
+                    Width="60" 
+                    Margin="10,21"
+                    Background="#FFE5A000" 
+                    Click="btnGeri_Click"
+                    Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtStokKoduAra"
+                                           Height="30" 
+                                           Margin="10,21"
+                                           Placeholder="Stok Kodu"
+                                           HorizontalAlignment="Stretch"
+                                           Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtStokAdiAra"
+                                           Height="30" 
+                                           Margin="10,21"
+                                           Placeholder="Stok Adı"
+                                           HorizontalAlignment="Stretch"
+                                           Grid.Column="2" />
+
+            <Button Name="btnAra" 
+                    Content="Ara" 
+                    Height="30" 
+                    FontSize="20"
+                    Width="60" 
+                    Margin="10,21"
+                    Background="#FFE5A000" 
+                    Click="btnAra_Click"
+                    Grid.Column="3" />
+
+            <Button Name="btnTemizle" 
+                    Content="Temizle" 
+                    Height="30" 
+                    FontSize="15"
+                    Width="60" 
+                    Margin="10,22,85,23"
+                    Background="#FFE5A000" 
+                    Click="btnTemizle_Click"
+                    Grid.Column="4" />
+
+            <Image Source="/Images/warcat.jpg" 
+                   Margin="130,21,5,23"
+                   Grid.Column="4" />
+
+            <TextBlock HorizontalAlignment="Right" 
+                       Height="55" 
+                       Margin="0,16,8,0" 
+                       TextWrapping="Wrap" 
+                       Text="{Binding FullName}" 
+                       VerticalAlignment="Top" 
+                       Width="106" 
+                       FontSize="12" 
+                       FontWeight="Bold" 
+                       Foreground="Gray"
+                       Grid.Column="6" />
+        </Grid>
+        <Grid x:Name="grid1"
+              Margin="0,0,0,60"
+              Grid.Row="1"
+              Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <userControls:ClearableTextBox x:Name="txtStokKoduGuncelle" 
+                                           Height="30" 
+                                           Margin="5,5"
+                                           Placeholder="Stok Kodu*"
+                                           MaxLength="15"
+                                           HorizontalAlignment="Stretch"
+                                           Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtStokAdiGuncelle" 
+                                   Height="30"
+                                   Margin="0,5"
+                                   Placeholder="Stok Adı*"
+                                   MaxLength="50"
+                                   HorizontalAlignment="Stretch"
+                                   Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtKilitliGuncelle" 
+                                   Height="30"
+                                   Margin="5,5"
+                                   Placeholder="Kilitli (E/H)"
+                                   MaxLength="1"
+                                   HorizontalAlignment="Stretch"
+                                   Grid.Column="2" />
+
+            <userControls:ClearableTextBox x:Name="txtUreticiKoduGuncelle" 
+                                   Height="30"
+                                   Margin="0,5"
+                                   Placeholder="Üretici Kodu"
+                                   MaxLength="15"
+                                   HorizontalAlignment="Stretch"
+                                   Grid.Column="3" />
+
+            <userControls:ClearableTextBox x:Name="txtOlcuBirimiGuncelle" 
+                                   Height="30"
+                                   Margin="5,5"
+                                   Placeholder="Ölçü Birimi"
+                                   MaxLength="2"
+                                   HorizontalAlignment="Stretch"
+                                   Grid.Column="4" />
+
+            <userControls:ClearableTextBox x:Name="txtKDVOraniGuncelle" 
+                                   Height="30"
+                                   Margin="0,5,5,5"
+                                   Placeholder="KDV Oranı"
+                                   MaxLength="5"
+                                   HorizontalAlignment="Stretch"
+                                   Grid.Column="5" />
+        </Grid>
+        <Grid x:Name="grid2" 
+              Grid.Row="1" 
+              Margin="0,40,0,0"
+              Height="Auto" 
+              Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <userControls:ClearableTextBox x:Name="txtGrupKoduGuncelle"
+                                   Height="30" 
+                                   Margin="5,0"
+                                   Placeholder="Grup Kodu* (HM/M/YM)" 
+                                   MaxLength="2"
+                                   Grid.Column="0" />
+
+            <userControls:ClearableTextBox x:Name="txtKODBirGuncelle"
+                                   Height="30"
+                                   Margin="5,0"
+                                   Placeholder="KOD 1"
+                                   MaxLength="50"
+                                   Grid.Column="1" />
+
+            <userControls:ClearableTextBox x:Name="txtKODIkiGuncelle"
+                                   Height="30"
+                                   Margin="5,0"
+                                   Placeholder="KOD 2"
+                                   MaxLength="50"
+                                   Grid.Column="2" />
+
+            <userControls:ClearableTextBox x:Name="txtKODUcGuncelle"
+                                   Height="30"
+                                   Margin="5,0"
+                                   Placeholder="KOD 3"
+                                   MaxLength="50"
+                                   Grid.Column="3" />
+
+            <userControls:ClearableTextBox x:Name="txtOncekiKodGuncelle"
+                                   Height="30"
+                                   Margin="5,0"
+                                   Placeholder="Önceki Kod"
+                                   MaxLength="15"
+                                   Grid.Column="4" />
+
+            <userControls:ClearableTextBox x:Name="txtIngilizceIsimGuncelle"
+                                   Height="30"
+                                   Margin="5,0"
+                                   Placeholder="İngilizce İsim"
+                                   MaxLength="50"
+                                   Grid.Column="5" />
+
+            <Button Name="btnEkleGuncelle" 
+            Content="Stoğa Ekle/Stoğu Güncelle" 
+            Height="30" 
+            Width="120" 
+            FontSize="10" 
+            Background="#FFE5A000" 
+            Margin="5,0,5,0" 
+            Click="btnEkleGuncelle_Click"
+            Grid.Column="6" />
+        </Grid>
+
+
+        <TextBlock x:Name="txtZorunlu"  
+                   Grid.Row="2"
+                   Height="20" 
+                   Text="*:Doldurulması zorunludur"
+                   Width="175"
+                   FontSize="15" 
+                   Foreground="DarkGray" 
+                   HorizontalAlignment="Left"
+                   Margin="10,0,0,0"
+                   Visibility="Hidden"/>
+
+
+        <DockPanel x:Name="dockPanel" 
+                Grid.Row="3"
+                Visibility="Hidden">
+            <DataGrid x:Name="dtgStokBilgileri"
+                    CanUserAddRows="False"
+                    CanUserReorderColumns="False"
+                    CanUserResizeColumns="False"
+                    CanUserDeleteRows="False"
+                    SelectionMode="Extended"
+                    Margin="10,0,10,0" 
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    HorizontalScrollBarVisibility="Auto"
+                    DataGridCell.Selected="dtgStokBilgileri_Selected">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="STOK__KODU" Binding="{Binding stok_kodu}" Width="Auto"/>
+                    <DataGridTextColumn Header="STOK__ADI" Binding="{Binding stok_adi}" Width="Auto"/>
+                    <DataGridTextColumn Header="KILITLI" Binding="{Binding kilitli}" Width="Auto"/>
+                    <DataGridTextColumn Header="URETICI__KODU" Binding="{Binding uretici_kodu}" Width="Auto"/>
+                    <DataGridTextColumn Header="OLCU__BIRIMI" Binding="{Binding olcu_birimi}" Width="Auto"/>
+                    <DataGridTextColumn Header="KDV__ORANI" Binding="{Binding kdv_orani}" Width="Auto"/>
+                    <DataGridTextColumn Header="GRUP__KODU" Binding="{Binding grup_kodu}" Width="Auto"/>
+                    <DataGridTextColumn Header="KOD__1" Binding="{Binding kod1}" Width="Auto"/>
+                    <DataGridTextColumn Header="KOD__2" Binding="{Binding kod2}" Width="Auto"/>
+                    <DataGridTextColumn Header="KOD__3" Binding="{Binding kod3}" Width="Auto"/>
+                    <DataGridTextColumn Header="ONCEKI__KOD" Binding="{Binding onceki_kod}" Width="Auto"/>
+                    <DataGridTextColumn Header="INGILIZCE__ISIM" Binding="{Binding ingilizce_isim}" Width="Auto"/>
+                    <DataGridTextColumn Header="KAYIT__TARIHI" Binding="{Binding kayit_tarihi}" Width="Auto"/>
+                    <DataGridTextColumn Header="KAYIT__YAPAN" Binding="{Binding kayit_yapan}" Width="Auto"/>
+                    <DataGridTextColumn Header="DUZELTME__TARIHI" Binding="{Binding duzeltme_tarihi}" Width="Auto"/>
+                    <DataGridTextColumn Header="DUZELTME__YAPAN" Binding="{Binding duzeltme_yapan}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <TextBlock Text="©Created by Şevket Emin Cengay" 
+                   FontSize="10" 
+                   Foreground="DarkGray" 
+                   Width="150" 
+                   Height="15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   Margin="10,0,0,0"
+                   Grid.Row="4"/>
+    </Grid>
+</Window>
